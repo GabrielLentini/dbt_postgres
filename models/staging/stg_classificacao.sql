@@ -1,7 +1,7 @@
 {{ config(
     unique_key='id_classificacao',
     materialized='ephemeral',
-    tags=['tempo']
+    tags=['tempo', 'resultados']
 ) }}
 
 SELECT
