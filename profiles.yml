@@ -3,10 +3,10 @@ dbt_postgres:
   outputs:
     dev:
       type: postgres
-      host: host.docker.internal
-      user: postgres
-      password: postgres
-      port: 5432
-      dbname: banco_postgres
-      schema: public
+      host: "{{ env_var('DBT_HOST') }}"
+      user: "{{ env_var('DBT_USER') }}"
+      password: "{{ env_var('DBT_PASSWORD') }}"
+      port: "{{ env_var('DBT_PORT') | int }}"
+      dbname: "{{ env_var('DBT_DBNAME') }}"
+      schema: "{{ env_var('DBT_SCHEMA') }}"
       threads: 4
