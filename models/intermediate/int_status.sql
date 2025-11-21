@@ -6,7 +6,7 @@
 
 SELECT
     r.id_piloto,
-    c.ano_corrida,
+    c.ano_corrida AS ano,
     jsonb_build_object(
         'status no ano:',
         jsonb_agg(DISTINCT jsonb_build_object(
